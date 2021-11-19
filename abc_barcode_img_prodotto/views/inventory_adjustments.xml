@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+  <!-- Vista di Aggiustamenti Magazzino -> Create producut dentro Barcode e Modifica prodotto -->
+      <record model="ir.ui.view" id="stock_inventory_line_inherit">
+      <field name="name">stock_inventory_line_inherit</field>
+      <field name="model">stock.inventory.line</field>
+      <field name="inherit_id" ref="stock_barcode.stock_inventory_line_barcode"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='product_id']" position="after">
+          <field name='image' widget="image" class="image" attrs="{'readonly': [('image', '!=', 1)]}"/>  
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
